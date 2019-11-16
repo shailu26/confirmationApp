@@ -1,0 +1,49 @@
+<div *ngIf="profileCompleted">
+  <h1 class="text-center">Your profile is already completed</h1>
+</div>
+<div *ngIf="!profileCompleted" class="form-container">
+  <div class="form-block">
+    <form class="mt-3 userform" [formGroup]="userForm">
+      <span class="form-title">
+        Complete Profile
+      </span>
+      <div class="input-div validate-input">
+        <span class="label-for">First Name</span>
+        <input type="text" id="exampleFormControlInput1" placeholder="Enter your first name" formControlName="firstName"
+          class="input100" required />
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="input-div validate-input">
+        <span class="label-for">Last Name</span>
+        <input type="text" id="exampleFormControlInput1" placeholder="Enter your last name (required)"
+          formControlName="lastName" class="input100" required />
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="input-div validate-input">
+        <span class="label-for">Email</span>
+        <input type="text" id="exampleFormControlInput1" placeholder="Enter your email (required)"
+          formControlName="email" class="input100" required />
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="input-div validate-input">
+        <span class="label-for">Address</span>
+        <input type="text" id="exampleFormControlInput1" placeholder="Enter your address (required)"
+          formControlName="address" class="input100" required />
+        <span class="focus-input100"></span>
+      </div>
+      <div class="container-submit100-form-btn">
+        <div class="wrap-submit100-form-btn" (click)="updateUser()">
+          <div class="submit100-form-bgbtn"></div>
+          <button class="submit100-form-btn" [ngClass]="{'invalid-submit': !userForm.valid}">
+            <span>
+              {{onGoingRequest ? 'Please Wait': 'Complete Profile'}}
+            </span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
