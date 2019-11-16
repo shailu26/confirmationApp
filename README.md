@@ -1,10 +1,25 @@
 # LogikApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
+This is a simple project where all the existing users do get email every half an hour till user confirm their information to the website
 
-## Development server
+## Dependencies
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+create mysql configuration and add it to .env file in the folder and also gmail email and password to send confirmation email link
+
+## Test server
+
+You need to create a table name called user and create 6 fields
+1. user_id(int) primary key AI
+2. first_name(string)
+3. last_name(string)
+4. email(string)
+5. address(string)
+6. confirmed_email(tinyint(1)) default 0
+
+After that create 5 random users using sql insert query so when you run node server.js it will send email link to existing user
+
+Run `node server.js` for a running server. Navigate to `http://localhost:8001/`.
 
 ## Code scaffolding
 
