@@ -9,7 +9,12 @@ create mysql configuration and add it to .env file in the folder and also gmail 
 
 ## Test server
 
-You need to create a table name called user and create 6 fields
+Use these commands -
+
+1. npm install
+2. ng build --prod
+
+then You need to create a table name called user and create 6 fields
 1. user_id(int) primary key AI
 2. first_name(string)
 3. last_name(string)
